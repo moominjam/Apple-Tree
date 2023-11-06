@@ -67,12 +67,11 @@ function draw() {
 
     let sat = 80 *noise(x/150, y/150, zoff);
     fill(220, sat, 100);
-      rect(x, y, 10, 10);
+      rect(x, y, 5, 5);
     }
   }
   colorMode(RGB);
 
-  
 
   drawSun();
   drawBackgroundLines();
@@ -157,7 +156,7 @@ function drawBackgroundLines() {
 
 function drawLines(numLines, gap, interval, inputRadius, centerX, centerY, strokeW) {
   strokeWeight(strokeW)
-  stroke(151, 183, 176)
+  stroke(240,244,168)
 
   for (let i = 0; i < numLines; i++) {
     let x = gap + i * interval
@@ -178,7 +177,7 @@ function drawLines(numLines, gap, interval, inputRadius, centerX, centerY, strok
 function drawGround() {
   noStroke();
   let rectHeight = scaledElement(600);
-  let baserectColor = color(54, 54, 54);
+  let baserectColor = color(21,174,103);
   fill(baserectColor);
   rect(0, canvasHeight - rectHeight, canvasWidth, rectHeight);
 }
@@ -192,7 +191,7 @@ function drawTreeTrunk() {
   let rectY2 = scaledElement(850);
   let rectX3 = scaledElement(40);
   let rectY3 = scaledElement(1100);
-  fill(1, 166, 180);
+  fill(240, 213,100);
   rect(width / 2 - rectX1 / 2, height - (rectHeight + rectY1), rectX1, rectY1);
   rect(width / 2 - rectX2 / 2, height - (rectHeight + rectY2), rectX2, rectY2);
   rect(width / 2 - rectX3 / 2, height - (rectHeight + rectY3), rectX3, rectY3);
@@ -208,7 +207,7 @@ function drawRoots() {
   let rectRootY2 = scaledElement(30);
   let rectRootX3 = scaledElement(900);
   let rectRootY3 = scaledElement(10);
-  fill(245, 209, 17);
+  fill(234,170,79);
   for (i = 0; i < 3; i++) {
     rect(width / 2 - (rectRootX1 - i * scaledElement(50)) / 2, height - (rectHeight - (rectRootY1 + i * scaledElement(70))), rectRootX1 - (i * scaledElement(50)), rectRootY1);
     rect(width / 2 - (rectRootX2 - i * scaledElement(50)) / 2, height - (rectHeight - (rectRootY2 + i * scaledElement(70)) - scaledElement(30)), rectRootX2 - (i * scaledElement(50)), rectRootY2);
