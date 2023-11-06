@@ -4,7 +4,7 @@ let bigCircleScale = 1;
 let smallCircleScale = 0.6;
 let gold;
 let seed;
-let zoff = 0;
+
 
 // Apple's coordinates 
 let bigcircleCenters = [
@@ -57,23 +57,21 @@ function setup() {
 
 function draw() {
   // 先绘制噪声云背景
-  background (220,70, 80);
-  colorMode(HSB);
-  let cloudColor = color(220,0,100);
+  colorMode(HSB); //切换到HSB颜色模式
+  let zoff = frameCount * 0.012;   //使用frameCount作为动态变化的zoff值
   let skyColor = color(220, 30, 90);
   noiseDetail(8, 0.65);
   
   for (let x = 0; x < width; x += 5) {
     for (let y = 0; y < height; y += 5) {
 
-      let n = noise(x * 0.005, y*0.005, zoff);
-      let inter = lerpColor(cloudColor, skyColor,n);
-      fill(inter);
+    let sat = 80 *noise(x/150, y/150, zoff);
+    fill(220, sat, 100);
       rect(x, y, 10, 10);
     }
   }
   colorMode(RGB);
-  zoff += 0.02;
+
   
 
   drawSun();
