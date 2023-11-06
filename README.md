@@ -1,4 +1,6 @@
 # Apple-Tree
+The team's initial design files are in the libraries file
+
 ## Animation Brief 
 Perlin noise can create changing clouds, flames, particle movement, and other naturally changing visual effects, so I chose to use Perlin noise to achieve the visual effect of randomly changing clouds and the sun.
 
